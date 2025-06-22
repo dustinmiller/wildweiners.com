@@ -1,0 +1,17 @@
+base_url = "https://wildweiners.com"
+title = "Wild Weiners"
+description = "Premium gourmet hot dogs and artisanal sausages served fresh from our food truck"
+
+compile_sass = true
+minify_html = true
+generate_feeds = true
+
+[[taxonomies]]
+name = "tags"
+feed = true
+
+[markdown]
+highlight_code = true
+
+[extra]
+author = "Wild Weiners Team"

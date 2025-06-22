@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ config.description }}{% endif %}">
+    <title>{% if page.title %}{{ page.title }} | {{ config.title }}{% else %}{{ config.title }}{% endif %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ get_url(path='css/styles.css') }}">
+    {% if config.generate_feed %}
+    <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ get_url(path='rss.xml') }}">
+    {% endif %}
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1 class="logo"><a href="{{ get_url(path='/') }}">{{ config.title }}</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ get_url(path='/') }}#menu" class="nav-link">Menu</a></li>
+                <li><a href="{{ get_url(path='/') }}#about" class="nav-link">About</a></li>
+                <li><a href="{{ get_url(path='/') }}#location" class="nav-link">Location</a></li>
+                <li><a href="{{ get_url(path='/blog/') }}" class="nav-link">Blog</a></li>
+                <li><a href="{{ get_url(path='/') }}#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>{{ config.title }}</h3>
+                    <p>{{ config.description }}</p>
+                </div>
+                <div class="footer-links">
+                    <a href="{{ get_url(path='/') }}#menu">Menu</a>
+                    <a href="{{ get_url(path='/') }}#about">About</a>
+                    <a href="{{ get_url(path='/') }}#location">Location</a>
+                    <a href="{{ get_url(path='/blog/') }}">Blog</a>
+                    <a href="{{ get_url(path='/') }}#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ now() | date(format="%Y") }} {{ config.title }}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ get_url(path='js/script.js') }}"></script>
+</body>
+</html>

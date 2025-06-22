@@ -36,6 +36,19 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:visited {
+    color: #cc4a1a;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -79,7 +92,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--accent-color);
     font-weight: 500;
     transition: var(--transition);
     position: relative;
@@ -87,6 +100,10 @@ body {
 
 .nav-link:hover {
     color: var(--primary-color);
+}
+
+.nav-link:visited {
+    color: #cc4a1a;
 }
 
 .nav-link::after {
@@ -130,7 +147,8 @@ body {
 }
 
 .hero-content {
-    max-width: 500px;
+    max-width: 720px;
+    text-align: center;
 }
 
 .hero-title {
@@ -460,13 +478,17 @@ body {
 }
 
 .social-link {
-    color: var(--text-light);
+    color: var(--accent-color);
     text-decoration: none;
     transition: var(--transition);
 }
 
 .social-link:hover {
     color: var(--primary-color);
+}
+
+.social-link:visited {
+    color: #cc4a1a;
 }
 
 .contact-form {
@@ -525,13 +547,17 @@ body {
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--accent-color);
     text-decoration: none;
     transition: var(--transition);
 }
 
 .footer-links a:hover {
     color: var(--primary-color);
+}
+
+.footer-links a:visited {
+    color: #cc4a1a;
 }
 
 .footer-bottom {
